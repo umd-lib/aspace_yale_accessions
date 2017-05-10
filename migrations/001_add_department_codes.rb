@@ -24,7 +24,7 @@ Sequel.migration do
 
       values = {
         :repo_id => id,
-        :codes => blobify(self, JSON([])),
+        :codes => blobify(self, '[]'),
       }
 
       [:create_time, :system_mtime, :user_mtime].each do |time|
