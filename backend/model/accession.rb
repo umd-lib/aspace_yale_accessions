@@ -16,7 +16,7 @@ Accession.properties_to_auto_generate.push ({
 Accession.properties_to_auto_generate.push ({
   :property => :id_0,
   :generator => YaleAccessionIdGenerator.id_0_generator,
-  :only_if => proc { true }
+  :only_if => proc {|json| !YaleAccessionIdGenerator.inside_import? && json[:id_0].nil? }
 })
 
 
