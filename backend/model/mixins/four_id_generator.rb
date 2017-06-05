@@ -25,7 +25,9 @@ module FourIdGenerator
   @sequence_generator = lambda {|json|
 
     type = json["jsonmodel_type"]
-    sequence_name = "#{type}_#{json['id_0']}"
+    repo = RequestContext.get(:repo_id) 
+
+    sequence_name = "#{type}_#{repo}_#{json['id_0']}"
 
     seq = Sequence.get(sequence_name)
     seq = Sequence.get(sequence_name) if seq < 1
