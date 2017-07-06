@@ -2,7 +2,7 @@ require_relative 'mixins/four_id_generator.rb'
 
 Accession.class_eval do
   include FourIdGenerator
-    
+
   def create_from_json(json, opts)
     if !FourIdGenerator.inside_import?
       json[:id_1] = nil
