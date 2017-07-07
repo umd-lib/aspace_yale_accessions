@@ -4,6 +4,9 @@ module FourIdGenerator
 
   def self.included(base)
     base.extend(ClassMethods)
+    base.class_eval do  
+      @repo_unique_constraints = self.repo_unique_constraints.reject { |v| v[:json_property] == :id_0  }
+    end 
   end
 
 
@@ -27,7 +30,12 @@ module FourIdGenerator
     type = json["jsonmodel_type"]
     repo = RequestContext.get(:repo_id) 
 
-    sequence_name = "#{type}_#{repo}_#{json['id_0']}"
+
+    # Resources are unique to a repo
+    # Accessions are unique to a repo and fiscal year ( id_0 )
+    sequence_name = type == 'resource' ? 
+        "#{type}_#{repo}" : 
+        "#{type}_#{repo}_#{json['id_0']}" 
 
     seq = Sequence.get(sequence_name)
     seq = Sequence.get(sequence_name) if seq < 1
@@ -56,6 +64,6 @@ module FourIdGenerator
 
 
   module ClassMethods
-
   end
+
 end
