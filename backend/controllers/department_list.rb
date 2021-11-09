@@ -18,7 +18,7 @@ class ArchivesSpaceService < Sinatra::Base
 		.permissions([])
   	.returns([200, "[(:department_list)]"]) \
   do 
-    handle_unlimited_listing(DepartmentList, params)
+    handle_unlimited_listing(DepartmentList, {:repo_id => params[:repo_id]})
   end
 
 
