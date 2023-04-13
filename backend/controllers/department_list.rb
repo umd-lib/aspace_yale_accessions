@@ -17,7 +17,7 @@ class ArchivesSpaceService < Sinatra::Base
   	.paginated(false)
 		.permissions([])
   	.returns([200, "[(:department_list)]"]) \
-  do 
+  do
     handle_unlimited_listing(DepartmentList)
   end
 
