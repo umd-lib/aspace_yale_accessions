@@ -1,6 +1,26 @@
 Yale Accessions README
 ----------------------
 
+# UMD Customizations
+
+See [docs/Customizations.md](docs/Customizations.md) for a description of the
+UMD customizations made to the stock
+[hudmol/aspace_yale_accessions](https://github.com/hudmol/aspace_yale_accessions)
+codebase.
+
+The UMD customizations are based on version "0.10" from the upstream repository.
+
+---
+
+**Note: Git branches**
+
+In this repository, the default "main" branch contains the UMD customizations
+to the upstream
+[hudmol/aspace_yale_accessions](https://github.com/hudmol/aspace_yale_accessions)
+repository (which uses a "master" branch).
+
+---
+
 # Getting Started
 
 Unzip the release and move it to:
@@ -20,7 +40,7 @@ Enable the plugin by editing the file in `config/config.rb`:
 
 See also:
 
-  https://github.com/archivesspace/archivesspace/blob/master/plugins/README.md
+  <https://github.com/archivesspace/archivesspace/blob/master/plugins/README.md>
 
 You will need to shutdown archivesspace and migrate the database:
 
@@ -29,7 +49,7 @@ You will need to shutdown archivesspace and migrate the database:
 
 See also:
 
-  https://github.com/archivesspace/archivesspace/blob/master/UPGRADING.md
+  <https://github.com/archivesspace/archivesspace/blob/master/UPGRADING.md>
 
 # How it works
 
@@ -43,7 +63,6 @@ identifier.
 
 The first and third sections of the identifier will be system-generated upon
 saving the record. The fourth section will be removed.
-
 
 # Increasing sequence numbers
 
