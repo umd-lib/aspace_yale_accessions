@@ -16,7 +16,7 @@ end
 Accession.properties_to_auto_generate.push ({
   :property => :id_0,
   :generator => FourIdGenerator.accession_fy_generator,
-  :only_if => proc { true }
+  :only_if => proc {|json| !FourIdGenerator.inside_import? && json[:id_0].nil? }
 })
 
 Accession.properties_to_auto_generate.push ({

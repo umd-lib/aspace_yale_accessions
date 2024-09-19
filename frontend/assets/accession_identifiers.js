@@ -1,5 +1,6 @@
 function AccessionIdentifiers(new_record) {
     this.ids = $('div.identifier-fields');
+    this.ids.addClass('form-inline');
     this.id_0 = $('#accession_id_0_');
     this.id_1 = $('#accession_id_1_');
     this.id_2 = $('#accession_id_2_');
@@ -77,7 +78,7 @@ AccessionIdentifiers.prototype.load_department_codes = function () {
             }
 
             if (codes.length > 1) {
-                var html = "<select id=\"accession_id_2_\" name=\"accession[id_2]\">";
+                var html = "<select id=\"accession_id_2_\" class=\"form-control\" name=\"accession[id_2]\">";
                 $.each(codes, function(i, code) {
                     if (code == current_code) {
                         html += "<option value=\"" + code + "\" selected=\"selected\">" + code + "</option>";
