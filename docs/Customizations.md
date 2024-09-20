@@ -62,12 +62,16 @@ or more department codes, so they should not be run in production.
    drop-down (looks like a gear) next to the selected repository on the
    right of the navigation bar.
 
-   Verify that a "Plugins | Department Codes" entry is present, and left-click
-   it. The "Department Codes" page will be displayed.
+   Verify that a "Department Codes" menu entry is present either directly in the
+   "Repository settings" drop-down (in the local development environment), or
+   as "Plugins | Department Codes" (on the servers). The difference is caused
+   by additional plugins being configured on the servers that also have
+   "Respository settings" menu entries.
 
    If there are no department codes (which may be the case in the local
-   development environment), add a code by entering `FOO` into the "Enter codes"
-   textbox and left-clicking the "Save" button.
+   development environment), add at least two codes (such as `FOO` and `BAR`)
+   by entering the codes, one at a time, hitting the `Enter` key after each
+   code, left-clicking the "Save" button once all the codes have been added.
 
 3) From the navigation bar, left-click "Create Accession". The "New Accession"
    form will be shown.
