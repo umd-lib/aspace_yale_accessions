@@ -8,7 +8,7 @@ UMD customizations made to the stock
 [hudmol/aspace_yale_accessions](https://github.com/hudmol/aspace_yale_accessions)
 codebase.
 
-The UMD customizations are based on version "0.10" from the upstream repository.
+The UMD customizations are based on version "1.2" from the upstream repository.
 
 ---
 
