@@ -17,8 +17,10 @@ class ArchivesSpaceService < Sinatra::Base
   	.paginated(false)
 		.permissions([])
   	.returns([200, "[(:department_list)]"]) \
-  do 
+  do
+    # UMD Customization
     handle_unlimited_listing(DepartmentList, {:repo_id => params[:repo_id]})
+    # End UMD Customization
   end
 
 

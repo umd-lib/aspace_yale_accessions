@@ -8,6 +8,34 @@ plugin.
 
 ## UMD Customizations
 
+### File Additions/Deletions
+
+The following stock files were deleted:
+
+* backend/model/mixins/accession_id_generator.rb
+
+  This file was replaced by "four_id_generator.rb".
+
+The following files have been added:
+
+* backend/model/mixins/four_id_generator.rb
+* backend/model/resource.rb
+* frontend/assets/resource_identifiers.js
+
+  **Note:** This file was derived from "yale_accession_identifiers.js" (with
+  significant changes). When performing an upgrade of the stock files, some
+  changes to "yale_accession_identifiers.js" (such as HTML attributes) may
+  be relevant to this file, as well as to
+  "frontend/assets/accession_identifiers.js" file.
+
+The following files have been moved (and possibly modified):
+
+* "spec/accession_id_generator_spec.rb" to
+  "backend/spec/accession_id_generator_spec.rb"
+* In "frontend/assets/"
+  * "yale_accession_identifiers.js" to "accession_identifiers.js"
+  * "yale_accessions.css" to "four_identifiers.css"
+
 ### Auto-generate accession identifiers
 
 **Jira Issue(s):** LIBASPACE-33, LIBASPACE-34
