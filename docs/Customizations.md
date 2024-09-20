@@ -92,25 +92,26 @@ or more department codes, so they should not be run in production.
 
    Verify that a "Department Codes" menu entry is present either directly in the
    "Repository settings" drop-down (in the local development environment), or
-   as "Plugins | Department Codes" (on the servers). The difference is caused
-   by additional plugins being configured on the servers that also have
-   "Respository settings" menu entries.
+   as "Plugins | Department Codes" (in Kubernetes). The difference is caused
+   by additional plugins being configured in the Kubernetes configuration which
+   also place entries in the "Repository settings" drop-down, and the stock
+   ArchivesSpace behavior is to provide them in the "Plugins" submenu.
 
    If there are no department codes (which may be the case in the local
    development environment), add at least two codes (such as `FOO` and `BAR`)
    by entering the codes, one at a time, hitting the `Enter` key after each
-   code, left-clicking the "Save" button once all the codes have been added.
+   code, then left-clicking the "Save" button once all the codes have been
+   added.
 
-3) From the navigation bar, left-click "Create Accession". The "New Accession"
+3) From the navigation bar, left-click "Create | Accession". The "New Accession"
    form will be shown.
 
 4) On the "New Accession" form, verify that, in the four-part "Identifier"
    field:
 
    * the second component has an "XXXX" placeholder, and is not editable
-   * The third component has is a drop-down list consisting of the department
-     codes
-   * The fourth component is empty, but is editable.
+   * The third component is a drop-down list consisting of the department codes
+   * The fourth component is empty, but is editable
 
 5) Create a new accession by filling out the following fields:
 
@@ -133,29 +134,28 @@ or more department codes, so they should not be run in production.
    and the third component matches the department code selected in the previous
    steps.
 
-8) From the navigation bar, left-click "Create Resource". The "New Resource"
+8) From the navigation bar, left-click "Create | Resource". The "New Resource"
    form will be shown.
 
 9) On the "New Resource" form, verify that, in the four-part "Identifier"
    field:
 
    * the first component has an "XXXX" placeholder, and is not editable
-   * The second component has is a drop-down list consisting of the department
-     codes
-   * The third component is empty, but is editable.
-   * The fourth component is empty, and *not* editable.
+   * The second component is a drop-down list consisting of the department codes
+   * The third component is empty, but is editable
+   * The fourth component is empty, and *not* editable (it will become editable
+     if the third component is populated)
 
 10) Create a new resource by filling out the following fields (the defaults are
    acceptable in the other fields):
 
-    | Field             | Value |
-    | ----------------- | ----- |
-    | Title             | Test Resource |
-    | Identifier        | [Select one of the department codes from the dropdown] |
-    | Dates \| Type     | [Select "Single" and then add any date for the "Begin" field] |
-    | Extents \| Number | 1.0 |
+    | Field      | Value |
+    | -----------| ----- |
+    | Title      | Test Resource |
+    | Identifier | [Select one of the department codes from the dropdown] |
 
-    then left-click the "Save Resource" button.
+    Fill out the remaining required fields) then left-click the
+    "Save Resource" button.
 
     The form should refresh, with a message indicating that a resource has been
     created.
