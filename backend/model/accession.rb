@@ -1,3 +1,4 @@
+# UMD Customization
 require_relative 'mixins/four_id_generator.rb'
 
 Accession.class_eval do
@@ -30,3 +31,4 @@ Accession.properties_to_auto_generate.push ({
   :generator => FourIdGenerator.import_generator,
   :only_if => proc {|json| !FourIdGenerator.inside_import? && json[:id_2].nil?  }
 })
+# End UMD Customization

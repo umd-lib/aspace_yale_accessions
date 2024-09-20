@@ -2,9 +2,11 @@ function AccessionIdentifiers(new_record) {
     this.ids = $('div.identifier-fields');
     this.ids.addClass('form-inline');
     this.id_0 = $('#accession_id_0_');
+    // UMD Customization
     this.id_1 = $('#accession_id_1_');
     this.id_2 = $('#accession_id_2_');
     this.id_3 = $('#accession_id_3_');
+    // End UMD Customization
 
     this.new_record = new_record;
 }
@@ -28,6 +30,7 @@ AccessionIdentifiers.prototype.init = function () {
     var self = this;
 
     if (self.new_record) {
+        // UMD Customization
         self.ids.removeClass('required');
         self.disable(self.id_0);
         self.disable(self.id_1);
@@ -36,6 +39,7 @@ AccessionIdentifiers.prototype.init = function () {
           self.id_1.removeAttr('disabled');
           self.id_1.val('XXXX');
         }
+        // End UMD Customization
 
         var date = $('#accession_accession_date_').val();
         if (date.length) {
@@ -56,7 +60,9 @@ AccessionIdentifiers.prototype.init = function () {
         });
     }
 
-
+    // UMD Customization
+    // $('#accession_id_3_').hide();
+    // End UMD Customization
     self.load_department_codes();
 };
 
@@ -69,7 +75,9 @@ AccessionIdentifiers.prototype.load_department_codes = function () {
         type: "GET",
         success: function(department_list) {
             var codes = department_list.codes;
+            // UMD Customization
             var current_code = $('#accession_id_2_').val();
+            // End UMD Customization
 
             // Deprecated department codes
             if (current_code.length && $.inArray(current_code, codes) < 0) {
@@ -78,7 +86,9 @@ AccessionIdentifiers.prototype.load_department_codes = function () {
             }
 
             if (codes.length > 1) {
+                // UMD Customization
                 var html = "<select id=\"accession_id_2_\" class=\"form-control\" name=\"accession[id_2]\">";
+                // End UMD Customization
                 $.each(codes, function(i, code) {
                     if (code == current_code) {
                         html += "<option value=\"" + code + "\" selected=\"selected\">" + code + "</option>";
@@ -91,15 +101,21 @@ AccessionIdentifiers.prototype.load_department_codes = function () {
                 });
 
                 html += "</select>"
+                // UMD Customization
                 $('#accession_id_2_').replaceWith(html);
                 $('#accession_id_3_').removeAttr('disabled');
+                // End UMD Customization
             } else if (codes.length == 1) {
+                // UMD Customization
                 $('#accession_id_2_').val(codes[0]);
                 $('#accession_id_2_').removeAttr('disabled');
                 self.disable($('#accession_id_2_'));
                 $('#accession_id_3_').removeAttr('disabled');
+                // End UMD Customization
             } else {
+                // UMD Customization
                 $('#accession_id_2_').attr('disabled', 'disabled');
+                // End UMD Customization
             }
         },
     });

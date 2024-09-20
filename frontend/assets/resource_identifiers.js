@@ -1,5 +1,6 @@
 function ResourceIdentifiers(new_record) {
     this.ids = $('div.identifier-fields');
+    this.ids.addClass('form-inline');
     this.id_0 = $('#resource_id_0_');
     this.id_1 = $('#resource_id_1_');
     this.id_2 = $('#resource_id_2_');
@@ -60,7 +61,7 @@ ResourceIdentifiers.prototype.load_department_codes = function () {
             }
 
             if (codes.length > 1) {
-                var html = "<select id=\"resource_id_1_\" name=\"resource[id_1]\">";
+                var html = "<select id=\"resource_id_1_\" class=\"form-control\" name=\"resource[id_1]\">";
                 $.each(codes, function(i, code) {
                     if (code == current_code) {
                         html += "<option value=\"" + code + "\" selected=\"selected\">" + code + "</option>";

@@ -1,5 +1,7 @@
 <% if controller.controller_name == 'accessions' %>
+    <%# UMD Customization %>
     <%= javascript_include_tag "#{@base_url}/assets/accession_identifiers.js" %>
+    <%# End UMD Customization %>
 
     <% if ['edit', 'new', 'create'].include?(controller.action_name) %>
         <script>
@@ -11,6 +13,7 @@
 
 <% end %>
 
+<%# UMD Customization %>
 <% if controller.controller_name == 'resources' %>
     <%= javascript_include_tag "#{@base_url}/assets/resource_identifiers.js" %>
 
@@ -31,7 +34,8 @@
 <% if %w( accessions resources ).include? 'accessions' %>
   <%= stylesheet_link_tag "#{@base_url}/assets/four_identifiers.css" %>
 <% end %>
-  
+<%# End UMD Customization %>
+
 <% if controller.controller_name == 'yale_accessions' %>
 	<%= javascript_include_tag "#{@base_url}/assets/tagmanager/tagmanager.js" %>
 	<%= javascript_include_tag "#{@base_url}/assets/department_list.js" %>
