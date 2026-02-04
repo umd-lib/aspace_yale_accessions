@@ -18,6 +18,11 @@ The following stock files were deleted:
 
 The following files have been added:
 
+* backend/model/sequence.rb
+
+  This stock ArchivesSpace file was removed in ArchivesSpace 4.0.0, but is still
+  used by this plugin. Added file from ArchivesSpace 3.5.1.
+
 * backend/model/mixins/four_id_generator.rb
 * backend/model/resource.rb
 * frontend/assets/resource_identifiers.js
