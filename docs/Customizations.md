@@ -114,6 +114,8 @@ or more department codes, so they should not be run in production.
 4) On the "New Accession" form, verify that, in the four-part "Identifier"
    field:
 
+   * the first component represents the current fiscal year (same as the actual
+     year through June, the next year on July 1st or later), and is not editable
    * the second component has an "XXXX" placeholder, and is not editable
    * The third component is a drop-down list consisting of the department codes
    * The fourth component is empty, but is editable
@@ -135,9 +137,9 @@ or more department codes, so they should not be run in production.
    displayed.
 
 7) On the "Test Accession" detail page, verify that in the four-part
-   "Identifier" field, the second component is a numeric value such as `0001`
-   and the third component matches the department code selected in the previous
-   steps.
+   "Identifier" field, the first component is the fiscal year, the second
+   component is a numeric value such as `0001` and the third component matches
+   the department code selected in the previous steps.
 
 8) From the navigation bar, left-click "Create | Resource". The "New Resource"
    form will be shown.
