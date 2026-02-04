@@ -1,22 +1,26 @@
 <%= setup_context(:title => I18n.t("plugins.yale_accessions.manage_department_list"), :controller => :yale_accessions) %>
 
-<h2><%= I18n.t("plugins.yale_accessions.manage_department_list") %></h2>
-<p><%= I18n.t("plugins.yale_accessions.manage_department_list_instructions") %></p>
+<div class="d-flex">
+  <div class="col-12">
+    <h2><%= I18n.t("plugins.yale_accessions.manage_department_list") %></h2>
+    <p><%= I18n.t("plugins.yale_accessions.manage_department_list_instructions") %></p>
 
-<%= form_for @department_list, as: 'department_list', url: '/plugins/yale_accessions/department_codes', :html => { :id => "department_list_#{@department_list['uri'].sub(/.*\//, '')}", :class => "department_list_update" } do |f| %> 
+    <%= form_for @department_list, as: 'department_list', url: '/plugins/yale_accessions/department_codes', :html => { :id => "department_list_#{@department_list['uri'].sub(/.*\//, '')}", :class => "department_list_update" } do |f| %>
 
-  <% @department_list['codes'].each do |code| %>
+      <% @department_list['codes'].each do |code| %>
 
-    <script>
-     DEPARTMENT_CODES.push("<%= code %>");
-    </script>
+        <script>
+        DEPARTMENT_CODES.push("<%= code %>");
+        </script>
 
-  <% end %>
-  <input class="tm-input tm-input-info" type="text" data-original-title="" style="width:9em;" placeholder="Enter codes" name="tags" autocomplete="off">
+      <% end %>
+      <input class="tm-input tm-input-info" type="text" data-original-title="" style="width:9em;" placeholder="Enter codes" name="tags" autocomplete="off">
 
-  <input type="hidden" name="department_list_uri" value="<%= @department_list['uri'] %>">
+      <input type="hidden" name="department_list_uri" value="<%= @department_list['uri'] %>">
 
-  <div class="form-actions">
-    <button id="department_codes_save" type="submit" class="btn btn-primary disabled">Save</button>
+      <div class="form-actions">
+        <button id="department_codes_save" type="submit" class="btn btn-primary disabled">Save</button>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

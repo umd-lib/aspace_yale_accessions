@@ -5,5 +5,5 @@ $(function() {
     $target = $('li.repo-container .dropdown-submenu > a:contains("Plug-ins")').parent().find('.dropdown-menu');
   }
 
-  $target.append('<li><a href="/plugins/yale_accessions/department_codes">Department Codes</a></li>');
+  $target.append('<li class="dropdown-item"><a href="/plugins/yale_accessions/department_codes">Department Codes</a></li>');
 })
